@@ -1,5 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
 \author{Sebastian Ellefsen}
 \title{%
 		Datamaskiner og Digitalteknikk 2018 \\
@@ -28,7 +30,7 @@
 			\begin{itemize}
 				\item Pekere til forskjellige minneområder
 			\end{itemize}
-			(Fig. 2.1) \newline
+			\includegraphics[width=\textwidth]{blokkdiagram.png} \\
 			ADR holder pekere til minneadresser i DATA, data kan da skrives til minne (WR) eller leses fra minne (RD) 
 		\subsection{CPU}
 			\begin{itemize}
@@ -39,14 +41,22 @@
 						\item Aritmetisk-logisk enhet (ALU)
 						\item Register
 							\begin{itemize}
-								\item PC
-								\item MAR
-								\item MDDR
-								\item Y-REG
-								\item MUX
-								\item IR
-								\item R0 ... R(n-1)
-								\item TEMP
+								\item PC : Program counter \\
+									\small Peker til den neste instruksjonen i Instruksjons Registeret
+								\item MAR : Memory Address Register \\
+									\small Lagrer adressen data enten vil hentes (fetch) fra eller skrives (write/send) til.
+								\item MDR : Memory Data Register \\
+									\small Lagrer data som flyttes til/fra primærminne
+								\item Y-REG : 
+								\item MUX : (multiplexer?)
+								\item IR : Instruction Register (Instruksjons Register) \\
+									\small Lagrer instruksjonene som skal utføres
+								\item R0 ... R(n-1) : General Purpose Registers (GPRs) / Generelle register \\
+									\small Registre som brukes av instruksjonene
+								\item TEMP \\
+									\small Brukes til forskjellige formål av forskjellige produsenter
+								\item Konstant-register \\
+									\small Lagrer en del read-only konstanter, f.eks 0, 1, $\pi$ etc.
 							\end{itemize}
 					\end{itemize}
 				\item Register
@@ -121,7 +131,7 @@
 				\end{itemize}
 				Parallellitetstyper:
 				\begin{itemize}
-					\item SIMD: Array Processor
-					\item MIMD: Multiprocessor
+					\item  Single Instruction, Multiple Data (SIMD): Array Processor
+					\item Multiple Instructions, Multiple Data (MIMD): Multiprocessor
 				\end{itemize}
 		\end{document}
