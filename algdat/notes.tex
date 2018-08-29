@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\title{Notater Algdat 2018}
+\author{Sebastian Ellefsen}
+\begin{document}
+	\maketitle
+	
+	\section{Forelesing 2: Datastrukturer}
+	
+		\begin{itemize}
+			\item $\sum_{i=0}^{n-1}i = \frac{n \cdot (n-1)}{2}$
+			\item $\sum_{i=0}^{h-1} 2^i = 2^h - 1$
+			
+			\section{Stack \& Queue}
+				\subsection{Stack}
+					Kun adgang øverst (legge til, trekke fra).
+					Først inn, sist ut (LIFO)
+					
+					Metoder: 
+					\begin{itemize}
+						\item STACK-EMPTY(S) // Sjekk om stakken er tom
+						\item PUSH(S, $x$) // Legg til i stakken
+						\item POP(S) // Fjern fra toppen av stakken
+					\end{itemize}
+				\subsection{Queue}
+					Først inn, først ut (FIFO).
+					Implemeteres som ringbuffer (modulært)
+					
+					Metoder:
+					\begin{itemize}
+						\item ENQUEUE(Q, $x$) // Legge til i køen
+						\item DEQUEUE(Q) // Hente ut første element i køen
+					\end{itemize}
+						
+				
+				
+			\section{Linked List}
+				\begin{itemize}
+					\item 	Noder som peker til neste (noen ganger forrige, dobbeltlenket - "doubly linked list").
+					\item Tar lineær tid å slå opp på en gitt posisjon.
+					\item Tar konstant tid å sette inn/fjerne elementer.
+				\end{itemize}
+				Metoder:
+				\begin{itemize}
+					\item LIST-SEARCH(L, $k$)  // Søk etter ett element/nøkkel $k$ i listen L
+					\item LIST-INSERT(L, $x$) // Sette inn en node $x$ i listen L
+					\item LIST-DELETE(L, $x$) // Slette en node $x$ fra listen L
+				\end{itemize}
+			
+			
+			
+			\section{Hashtables}
+				\begin{itemize}
+					\item Både lesing og skriving (slå opp og sette inn / fjerne) tar konstant tid
+					\item Direkte adressering
+					\item Modifisert nøkkel er indeks
+				\end{itemize}
+			
+				\subsection{Chaining}
+					Hashtabell sammen med linket liste. Nøkkelen settes inn som en node som linker videre til andre nøkler med samme hash.
+					
+					Forventet listestørrelse er en konstant (summen av mindre og mindre brøker).
+			
+			
+			\section{Dynamic tables}
+				Når en liste begynner å bli full re-allokerer man til en større liste.
+				
+				Amortisert arbeid: Gjennomsnittlig kjøretid per operasjon etter mange operasjoner.
+				
+				Avg. case : Snitt over instanser \newline
+				Amotisering : Snitt over operasjoner
+			
+			\section{Misc.}
+				Kapittel 10..3 er selvstudium
+			
+		\end{itemize}
+		
+	
+\end{document}

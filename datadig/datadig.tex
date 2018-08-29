@@ -1,0 +1,127 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\author{Sebastian Ellefsen}
+\title{%
+		Datamaskiner og Digitalteknikk 2018 \\
+		\large TDT4160}
+
+\begin{document}
+	\maketitle
+	\section{Forelesing 1 - Introduksjon}
+		\subsection{TL;DR}
+			\begin{itemize}
+				\item Prosessorhastighet vokser mye raskere enn minnehastigheten, lager et "gap", behov for å "lure" maskinen til å tro at den er raskere enn den er.
+				\item Maskiner brytes ned til et abstrakt hierarki.
+			\end{itemize}
+	\section{%
+		Forelesing 2 \\
+		\small Mikroarkitektur}
+		\subsection{Datamaskinsystemer}
+			\begin{itemize}
+				\item To typer maskiner
+					\begin{itemize}
+						\item Tradisjonelle datamaskiner
+						\item Integrerte ("embedded") maskiner 
+					\end{itemize}
+			\end{itemize}
+		\subsection{System og minnekart}
+			\begin{itemize}
+				\item Pekere til forskjellige minneområder
+			\end{itemize}
+			(Fig. 2.1) \newline
+			ADR holder pekere til minneadresser i DATA, data kan da skrives til minne (WR) eller leses fra minne (RD) 
+		\subsection{CPU}
+			\begin{itemize}
+				\item "Hjernen" i en datamaskin
+				\item Hoveddeler
+					\begin{itemize}
+						\item Control Unit
+						\item Aritmetisk-logisk enhet (ALU)
+						\item Register
+							\begin{itemize}
+								\item PC
+								\item MAR
+								\item MDDR
+								\item Y-REG
+								\item MUX
+								\item IR
+								\item R0 ... R(n-1)
+								\item TEMP
+							\end{itemize}
+					\end{itemize}
+				\item Register
+					\begin{itemize}
+						\item Programteller (PC) - Adresse til neste instruksjon
+						\item Instruksjonsregister (IR)
+						\item Generelle registre (General Purpose Registers (GPRs))
+					\end{itemize}
+			\end{itemize}
+		\subsection{Hvordan utføres et program}
+			\begin{itemize}
+				\item Fetch-Execute cycle
+				\item Programminne og Dataminne
+			\end{itemize}
+		\subsection{Lager}
+			Hovedminne / Main Memory
+			\begin{itemize}
+				\item RAM (Random Access Memory)
+				\item To vanlige typer RAM
+					\begin{itemize}
+						\item Statisk
+							\begin{itemize}
+								\item Rask
+								\item Stor minecelle (Mange transistorer)
+							\end{itemize}
+						\item Dynamisk
+							\begin{itemize}
+								\item Ikke så rask
+								\item Mindre minneareal
+								\item Mer komplisert
+								\item Må ha "opplading" (bruker kondensatorer som kan lades ut)
+							\end{itemize}
+					\end{itemize}
+			\end{itemize}
+			Lagerhierarki (hastighet$\downarrow$ / kapasitet $\uparrow$ 
+			
+			\begin{itemize}
+				\item Register
+				\item Cache
+				\item Main Memory
+				\item Magnetic DIsk
+				\item Tape / Optical Disk
+			\end{itemize}
+		Nærmere CPU $\rightarrow$ Raskere / mindre
+			\subsubsection{Cache}
+				Mean Access Time: $x + (1 - h) \cdot m$
+				Prøver gjette hvilke data man trenger
+				\begin{itemize}
+					\item c: cache access time
+					\item m: main mamory acces time
+					\item m: hit ratio
+				\end{itemize}
+			\subsection{Busser og arkitektur}
+				Busser forbinder komponenter.
+			\subsection{Ytelse}
+				Må velge hvilken metrikk vi bruker for måling av ytelse, avhengig av behov.
+			\subsection{Paral6lellitet}
+				\begin{itemize}
+					\item Essensielt for å øke ytelsen
+					\item To typer parallellitet
+						\begin{itemize}
+							\item Instruksjonsnivåparallellitet (Instruction-Level Parallelism (ILP))
+								\begin{itemize}
+									\item Flere instruksjoner utføres samtidig
+									\item Samlebånd (pipelining)
+								\end{itemize}
+							\item Prosessornivåparallellitet (Processor-Level Paralellism (PLP))
+								\begin{itemize}
+									\item Bruker flere prosessorer
+								\end{itemize}
+						\end{itemize}
+				\end{itemize}
+				Parallellitetstyper:
+				\begin{itemize}
+					\item SIMD: Array Processor
+					\item MIMD: Multiprocessor
+				\end{itemize}
+		\end{document}
