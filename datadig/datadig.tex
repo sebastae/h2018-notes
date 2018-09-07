@@ -91,7 +91,7 @@
 							\end{itemize}
 					\end{itemize}
 			\end{itemize}
-			Lagerhierarki (hastighet$\downarrow$ / kapasitet $\uparrow$ 
+			Lagerhierarki (hastighet$\downarrow$ / kapasitet $\uparrow$ / kostnad$\downarrow$)
 			
 			\begin{itemize}
 				\item Register
@@ -113,7 +113,7 @@
 				Busser forbinder komponenter.
 			\subsection{Ytelse}
 				Må velge hvilken metrikk vi bruker for måling av ytelse, avhengig av behov.
-			\subsection{Paral6lellitet}
+			\subsection{Parallellitet}
 				\begin{itemize}
 					\item Essensielt for å øke ytelsen
 					\item To typer parallellitet
@@ -134,4 +134,52 @@
 					\item  Single Instruction, Multiple Data (SIMD): Array Processor
 					\item Multiple Instructions, Multiple Data (MIMD): Multiprocessor
 				\end{itemize}
-		\end{document}
+			\section{Forelesing 3 - Digitalt Logisk Nivå}
+				\subsection{Hva skjer "under panseret"}
+					\subsubsection{Analog v. Digital}
+						Analog: Verdi- og tidskontinuerlig, sinus-kurve \\
+						Digital: Diskretverdi og -tid, firkant-kurve, spenning mellom 0V(0) og 5V(1) (gammel). \\
+						I nyere datamaskiner går spenningsnivået mellom 0V og 0.75V \\
+						\indent Senket spenningsnivået, senket effekten/energiforbruk $\frac{U^2}{R} = W$
+					\subsubsection{To typer kretser}
+						\begin{itemize}
+							\item Kombinatoriske kretser
+								\begin{itemize}
+									\item Feedforward
+									\item Ikke tidssensitiv (time-independant)
+									\item Neste = $f(input)$
+								\end{itemize}
+							\item Sekvensielle kretser
+								\begin{itemize}
+									\item Tilbakekobling
+									\item Minne
+									\item Neste = $f(input, state)$
+								\end{itemize}
+								Eksempel kretser: D-Latch (D Flip Flop), kan lagre data (1 bit)
+							
+						\end{itemize}
+					\subsubsection{Digitale Maskiner (porter)}
+					Logiske porter: \\
+					\indent Bolsk funksjon (Bolsk algebra) \\
+					\indent Bygget opp av transistorer
+						\begin{itemize}
+							\item NOT
+							\item AND $\rightarrow$ NAND (AND + NOT)
+							\item OR $\rightarrow$ NOR (OR + NOT)
+							\item XOR
+						\end{itemize}
+					\subsubsection{Komponenter}
+						\begin{itemize}
+							\item Kan lage kombinatoriske kretser \\
+							\indent Kretser uten klokke eller sekvensielle egenskaper
+							\begin{itemize}
+								\item Decoders
+								\item Encoders
+								\item Multiplexers
+								\item Demultiplexers
+								\item Binary Adders
+								\item Binary Subtractors
+							\end{itemize}
+	
+						\end{itemize}		
+				\end{document}
